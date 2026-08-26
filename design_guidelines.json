@@ -1,0 +1,97 @@
+{
+  "theme": "dark",
+  "GENERAL_UI_UX_DESIGN_GUIDELINES": [
+    "Prioritize 'Enterprise Premium' aesthetic: confident, measured, corporate, architectural.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use generous spacing (2-3x more than standard) for a luxurious, uncrowded feel.",
+    "All interactive and key informational elements MUST include a `data-testid` attribute to facilitate robust automated testing.",
+    "Avoid centered layouts for dense information; use structural, grid-based asymmetry.",
+    "Never use generic AI emojis or cliché 'glowing brain' metaphors.",
+    "Ensure hover states are clear and accessible, with micro-interactions."
+  ],
+  "typography": {
+    "font_family": "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+    "headings": {
+      "h1": "text-[clamp(4rem,8vw,150px)] font-medium tracking-tighter leading-none text-[#F5F5F5]",
+      "h2": "text-4xl md:text-5xl lg:text-7xl font-medium tracking-tighter text-[#F5F5F5]",
+      "h3": "text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-[#F5F5F5]"
+    },
+    "body": "text-base md:text-lg text-[#8A8A8A] font-light leading-relaxed",
+    "accent_labels": "text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-[#F5F5F5]",
+    "notes": "Typography is critical here. Headings must have tight letter spacing (-0.02em to -0.04em) and use SF Pro. No generic Inter for headings."
+  },
+  "colors": {
+    "background": "#050505",
+    "text_primary": "#F5F5F5",
+    "text_muted": "#8A8A8A",
+    "accent": "#ffffff",
+    "border": "rgba(245, 245, 245, 0.1)",
+    "surface_glass": "rgba(20, 20, 20, 0.6)",
+    "notes": "Strictly dark cinematic environment. No neon greens or purples. Use grayscale, whites, and subtle silver for depth."
+  },
+  "layouts": {
+    "hero": "100vh full-screen section with massive masked text. Z-index layering with a fixed/sticky 3D canvas behind the HTML content.",
+    "domain_sections": "Use high-density grids or expansive asymmetrical layouts (e.g., 12-col grid where text spans 4 cols and the 3D element dominates the rest).",
+    "capability_matrix": "Spatial floating panels using CSS 3D transforms or Framer Motion to create a depth-based matrix.",
+    "spacing": "Massive gaps between major sections (`py-32` or `py-48`) to let the 3D scrolling animations breathe."
+  },
+  "motion_and_interactions": {
+    "scroll_physics": "Lenis for smooth scrolling, connected to the GSAP ticker.",
+    "storytelling_engine": "GSAP ScrollTrigger to orchestrate pinning and sequence reveals.",
+    "ui_interactions": "Framer Motion for magnetic buttons, custom cursor, and subtle UI entering animations.",
+    "custom_cursor": "A small `#F5F5F5` dot that tracks the mouse and expands when hovering over clickable elements.",
+    "text_reveals": "Mask text reveals for key statements: wrapping text lines in `overflow-hidden` containers and animating `translateY` from 100% to 0%."
+  },
+  "3d_libraries_and_strategy": {
+    "libraries": [
+      "three",
+      "@react-three/fiber",
+      "@react-three/drei",
+      "gsap",
+      "@studio-freight/lenis",
+      "framer-motion"
+    ],
+    "Intelligence_Core": "Render a central R3F Canvas. Use `MeshPhysicalMaterial` for a glass/computational sphere with orbiting rings and floating data particles (`Points`). MUST NOT look like a human brain.",
+    "Scroll_Reactivity": "Use GSAP ScrollTrigger to mutate the camera position, object scale, and rotation of the 3D core as the user scrolls down through the chapters.",
+    "Wireframe_Globe": "Custom R3F sphere with lines or dots to represent the USA/India/Australia global footprint."
+  },
+  "component_instructions": {
+    "App.jsx": "Main orchestrator. Wraps everything in Lenis, sets up the R3F Canvas as a fixed background, and overlays HTML sections. Note: use `.jsx` or `.js` extension.",
+    "MagneticButton.jsx": "Use Framer Motion to track mouse position within the button bounds and slightly translate the text/icon towards the cursor.",
+    "KineticTypography.jsx": "Horizontal scrolling sequence for 'Data -> Understand -> Predict -> Optimize -> Decide -> Act'."
+  },
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBkYXJrJTIwYWJzdHJhY3QlMjB0ZXh0dXJlfGVufDB8fHx8MTc4Nzc0NTAwMHww&ixlib=rb-4.1.0&q=85",
+      "category": "background_texture",
+      "description": "Cinematic dark background texture. Use with very low opacity (5-10%) as an overlay to break up pure #050505 digital flatness."
+    },
+    {
+      "url": "https://images.pexels.com/photos/9701960/pexels-photo-9701960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "domain_infra",
+      "description": "Modern architectural facade. Can be used in the AI x Infrastructure domain chapter to represent structural wireframes."
+    },
+    {
+      "url": "https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "domain_people",
+      "description": "Human and robotic hands reaching out. Perfect subtle background for the AI x People (Human+Machine) Augmented Intelligence moment."
+    }
+  ],
+  "accessibility": {
+    "contrast": "Ensure #F5F5F5 text is readable against the 3D models. Use radial gradients or text shadows behind text if the 3D scene gets too bright.",
+    "motion": "Respect `prefers-reduced-motion` for GSAP and Framer Motion."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "No generic AI slop. Do not use glowing brains, neon colors, or cyberpunk clichés. The vibe is 'Enterprise Premium'.",
+    "You MUST NOT center align the app container, ie do not add `.App { text-align: center; }` in the css file.",
+    "Never apply `transition: all` globally in CSS. It breaks transforms.",
+    "Every interaction needs micro-animations - hover states, transitions, entrance animations. Static = dead.",
+    "Use layered z-index: Base background -> 3D Canvas -> HTML UI overlay.",
+    "Implement a single continuous scrolling journey where the 3D scene transitions seamlessly behind the HTML UI.",
+    "Make sure the 3D Core is properly lit using ambient and directional lights within R3F.",
+    "Ensure 'INTELLIGENCE AT THE CORE' text masking works flawlessly in the hero section.",
+    "The 'Intelligence Loop' (Sense/Understand/Predict/Optimize/Act/Learn) must be visually cyclical and interactive.",
+    "Ensure that testing attributes `data-testid` are placed on major interactive elements.",
+    "Do NOT add a fully transparent background to overlay components without a backdrop-blur."
+  ]
+}
