@@ -21,6 +21,9 @@ Design and implement a premium, cinematic, highly interactive "AI INTELLIGENCE" 
 - Custom cursor, magnetic buttons, masked line reveals, atmosphere (grain/grid/vignette), prefers-reduced-motion fallbacks, mobile density reduction, lazy WebGL with frameloop pause when offscreen.
 - Verified: all sections screenshot-tested across scroll depth; hover states; zero console errors; backend /api health OK.
 
+### 2026-08-29 — Interactive teaser section
+- Added "Incoming Transmission" surprise section between Summit and Final CTA: press-and-hold signal-lock button (SVG progress ring), spiral particle field with cursor attraction and collapse-on-charge, glyph-scramble text resolving into "SOMETHING BIG IS COMING.", locked state with "The next chapter of the intelligence layer is in development. / Stay close." Keyboard accessible (Space/Enter hold), instant reveal under prefers-reduced-motion. Verified mid-hold and locked states via browser automation.
+
 ## Backlog
 - P0: none blocking.
 - P1: Cinematic text sequence section ("We don't use AI to look futuristic..."), three-pillar synthesis 3D environment, AI-across-every-layer vertical section, section-entry transition from the live site's global map (requires embedding into the real site).

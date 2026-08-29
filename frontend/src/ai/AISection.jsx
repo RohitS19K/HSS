@@ -16,6 +16,7 @@ import Marquee from "./Marquee";
 import CapabilityMatrix from "./CapabilityMatrix";
 import GlobalNetwork from "./GlobalNetwork";
 import Summit from "./Summit";
+import Teaser from "./Teaser";
 import FinalCTA from "./FinalCTA";
 
 const CoreCanvas = lazy(() => import("./CoreCanvas"));
@@ -151,6 +152,7 @@ export default function AISection() {
           <CapabilityMatrix />
           <GlobalNetwork />
           <Summit />
+          <Teaser />
           <FinalCTA />
         </div>
       </main>
